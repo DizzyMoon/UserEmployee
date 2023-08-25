@@ -1,5 +1,7 @@
 package com.example.useremployee.module;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,9 +10,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String email;
+    @JsonIgnore
     private String password;
 
     @OneToOne(mappedBy = "user")
+    @JsonBackReference //Do not include in json response
     private Employee employee;
 
     public User(){

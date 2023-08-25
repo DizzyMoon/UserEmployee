@@ -20,13 +20,13 @@ class EmployeeRepositoryTest {
     EmployeeRepository employeeRepository;
     @Test
     void testAtLeastOneMikkel() {
-        List<Employee> employees = employeeRepository.findAllByName("Mikkel");
+        List<Employee> employees = employeeRepository.findEmployeeByName("Mikkel");
         assertTrue(employees.size() > 0);
     }
 
     @Test
     void testDeleteEmployee(){
-        List<Employee> employees = employeeRepository.findAllByName("Mikkel");
+        List<Employee> employees = employeeRepository.findEmployeeByName("Mikkel");
         Employee emp1 = employees.get(0);
         //userRepository.delete(emp1.getUser());
         assertThrows(DataIntegrityViolationException.class, () -> userRepository.delete(emp1.getUser()));
