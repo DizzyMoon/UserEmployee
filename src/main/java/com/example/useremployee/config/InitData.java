@@ -23,7 +23,7 @@ public class InitData implements CommandLineRunner {
     public void run(String... args) throws Exception {
         User user1 = userRepository.save(new User("mikkel@gmail.com", "1234" ));
         userRepository.save(new User("børge@gmail.com", "kode" ));
-        userRepository.save(new User("stimon@gmail.com", "6969" ));
+        userRepository.save(new User("simon@gmail.com", "6969" ));
 
         Employee emp1 = new Employee();
         emp1.setName("Mikkel");
